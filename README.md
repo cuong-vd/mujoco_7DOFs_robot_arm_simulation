@@ -6,7 +6,6 @@ This project simulates a 7-DOF robotic arm using MuJoCo and provides a GUI to co
 
 - Python 3.8 or higher
 - MuJoCo installed and configured
-- A valid MuJoCo license key (`mjkey.txt`) in your MuJoCo installation directory
 
 ## Installation
 
