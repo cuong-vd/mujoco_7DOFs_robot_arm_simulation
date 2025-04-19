@@ -12,8 +12,8 @@ This project simulates a 7-DOF robotic arm using MuJoCo and provides a GUI to co
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/7dof-robot-ik.git
-cd 7dof-robot-ik
+git clone https://github.com/vdcuong2002/mujoco_7DOFs_robot_arm_simulation.git
+cd mujoco_7DOFs_robot_arm_simulation
 ```
 
 ### 2. Create a Virtual Environment
@@ -63,11 +63,11 @@ Ensure that MuJoCo is installed and configured correctly. You can follow the off
 - `robot_7dof.xml`: MuJoCo XML model of the 7-DOF robot.
 - STL files: Mesh files for the robot's components.
 
-## Troubleshooting
+<!-- ## Troubleshooting
 
 - If you encounter issues with MuJoCo, ensure that the `MUJOCO_PY_MJKEY_PATH` and `MUJOCO_PY_MJPRO_PATH` environment variables are set correctly.
 - If the simulation is unstable, check the `MUJOCO_LOG.TXT` file for warnings or errors.
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the MIT License. See the `LICENSE` file for details. -->
