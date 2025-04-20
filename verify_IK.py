@@ -8,6 +8,7 @@ import threading
 from scipy.spatial.transform import Rotation as R
 
 from InverseKinematics import levenberg_marquardt_ik_dh
+from ForwardKinematics import forward_kinematics_dh
 
 # Load MuJoCo model
 model = mujoco.MjModel.from_xml_path("robot_7dof.xml")
@@ -21,14 +22,15 @@ plt.axis('off')
 
 sliders = []
 slider_labels = ['x', 'y', 'z', 'roll', 'pitch', 'yaw']
-slider_limits = [(-0.5, 0.5), (-0.5, 0.5), (0, 1.024), (-3.14, 3.14), (-3.14, 3.14), (-3.14, 3.14)]
+slider_limits = [(-1, 1), (-1, 1), (0, 1.024), (-3.14, 3.14), (-3.14, 3.14), (-3.14, 3.14)]
 num_sliders = len(slider_labels)
 slider_height = 0.03
 slider_spacing = 0.05
 start_y = 0.85
 
-
-initial_values = [0, 0.141, 1.024, 0, 0.0, 0.0]
+angles_offset = [0.0, -30, -30, 0.0, 30, -90, 0]  # Offset angles
+angles_offset = np.radians(angles_offset)  # Convert angles from degrees to radians
+initial_values = forward_kinematics_dh(angles_offset)
 
 for i in range(num_sliders):
     ax_slider = fig.add_axes([0.25, start_y - i * slider_spacing, 0.65, slider_height])
@@ -73,7 +75,7 @@ def run_simulation():
 
             # Apply computed joint positions to model
             for i in range(7):
-                data.joint(f"joint{i+1}").qpos = joint_demand[i]
+                data.joint(f"joint{i+1}").qpos = joint_demand[i] - angles_offset[i]
 
             joint_previous = joint_demand
 
