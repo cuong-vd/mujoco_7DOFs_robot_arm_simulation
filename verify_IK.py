@@ -45,7 +45,7 @@ def InverseKinematics(joint_previous, x, y, z, roll, pitch, yaw):
 
 # Simulation thread
 def run_simulation():
-    joint_previous = np.array([0.0] * 7)  # Initial joint positions
+    joint_previous = angles_offset
     with mujoco.viewer.launch_passive(model, data) as viewer:
         t = 0.0
         while viewer.is_running():

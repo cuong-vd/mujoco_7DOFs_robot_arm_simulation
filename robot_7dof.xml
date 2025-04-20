@@ -18,9 +18,9 @@
 
         <!-- Robot Base -->
         <body name="base" pos="0 0 0">
-            <geom type="capsule" fromto="0 0 0  0.5 0 0" size="0.003" rgba="1 0 0 1"/>
-            <geom type="capsule" fromto="0 0 0  0 0.5 0" size="0.003" rgba="0 1 0 1"/>
-            <geom type="capsule" fromto="0 0 0  0 0 0.5" size="0.003" rgba="0 0 1 1"/>
+            <geom type="capsule" fromto="0 0 0  0.5 0 0" size="0.006" rgba="1 0 0 1"/>
+            <geom type="capsule" fromto="0 0 0  0 0.5 0" size="0.006" rgba="0 1 0 1"/>
+            <geom type="capsule" fromto="0 0 0  0 0 0.5" size="0.006" rgba="0 0 1 1"/>
             <geom type="mesh" mesh="base_mesh" rgba="0.8 0.8 0.8 1" euler="0 0 3.1416"/>
 
             <!-- Link 1 -->
