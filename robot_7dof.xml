@@ -2,7 +2,6 @@
     <compiler angle="radian"/>
     <option timestep="0.01" gravity="0 0 0"/>
     
-    <!-- Tải asset (mesh file) -->
     <asset>
         <mesh name="base_mesh" file="base.stl" scale="0.001 0.001 0.001"/>
         <mesh name="motor110_mesh" file="motor110.stl" scale="0.001 0.001 0.001"/>
@@ -10,11 +9,19 @@
         <mesh name="link2_mesh" file="link2.stl" scale="0.001 0.001 0.001"/>
         <mesh name="link3_mesh" file="link3.stl" scale="0.001 0.001 0.001"/>
     </asset>
+
+    <asset>
+        <texture name="grid" type="2d" builtin="checker" rgb1=".1 .2 .3"
+         rgb2=".2 .3 .4" width="300" height="300" mark="none"/>
+        <material name="grid" texture="grid" texrepeat="1 1"
+         texuniform="true" reflectance=".2"/>
+      </asset>
     
     <worldbody>
 
         <!-- Ground plane -->
-        <geom name="ground" type="plane" pos="0 0 0" size="5 5 0.1" rgba="0.3 0.8 0.3 1"/>
+        <light name="light" pos="0 0 20"/>
+        <geom name="ground" type="plane" pos="0 0 0" size="5 5 .1" material="grid"/>
 
         <!-- Robot Base -->
         <body name="base" pos="0 0 0">
